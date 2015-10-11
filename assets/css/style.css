@@ -1,0 +1,169 @@
+/**
+ ⋮
+ ⋮ AngularJS | To-Do App
+ ⋮
+ */
+
+ /*
+  .block            represents the higher level of an abstraction or component.
+  .block__element   represents a descendent of .block that helps form .block as a whole.
+  .block--modifier  represents a different state or version of .block
+
+  positioning (with coordinates) styles
+  float/clear styles
+  display/visibility styles
+  spacing (margin, padding, border) styles
+  dimensions (width, height) styles
+  typography-related (line-height, color, etc.) styles
+  miscellaneous (list-style, cursors, etc.) styles
+
+
+.selector {
+  / * Positioning * /
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  right: 0;
+
+  / * Display & Box Model * /
+  display: inline-block;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  border: 10px solid #333;
+  margin: 10px;
+
+  / * Color * /
+  background: #000;
+  color: #fff
+  
+  / * Text * /
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: right;
+
+  / * Other * /
+  cursor: pointer;
+}
+*/
+
+  /* positioning */
+  /* box model */
+  /* color */
+  /* text */
+  /* other */
+
+
+body {
+  background-color: #444349;
+  background-image: url(../img/stardust.png);
+  background-repeat: repeat;
+}
+
+.panel {
+  border-radius: 2px;
+  background-color: #434a54;
+}
+
+.title {
+  margin: 20px 0 10px 0;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.todos {
+  margin: 10px 0 10px 0;
+  color: #fff;
+  font-size: 2rem;
+  text-align: left;
+}
+
+.todos__new {
+  border-bottom: 3px solid #ccd1d9;
+  margin-bottom: 10px;
+}
+
+.button__submit {
+  margin: 15px 0px;
+}
+
+.todos__remaining {
+  border-bottom: 3px solid #ccd1d9;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.todos__completed {
+  border-bottom: 3px solid #ccd1d9;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.todos__remaining--empty,
+.todos__completed--empty {
+  margin: 10px 0 10px 0;
+  display: block;
+  font-size: 14px;
+}
+
+.todos__header {
+  border-bottom: 1px solid #ccd1d9;
+  padding-bottom: 1px;
+  text-align: center;
+}
+
+.todo__list {
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  max-height: 150px;
+  overflow-y: scroll;
+}
+
+.todo--remaining {
+  list-style: none;
+  cursor: pointer;
+  border: 1px solid #ccd1d9;
+  border-radius: 2px;
+  background-color: #656D78;
+  line-height: 30px;
+}
+
+.todo--completed {
+  list-style: none;
+  cursor: pointer;
+  border: 1px solid #ccd1d9;
+  border-radius: 2px;
+  background-color: #656D78;
+  text-decoration: line-through;
+  line-height: 30px;
+}
+
+.todo--remaining:hover {
+  text-decoration: line-through;
+}
+
+.todo--completed:hover {
+  opacity: 0.5;
+}
+
+.todo__counter {
+  background-color: #CCD1D9;
+  color: #000;
+  margin-right: 10px;
+  width: 35px;
+  display: inline-block;
+  height: 100%;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+}
+
+.footer a:hover {
+  color: #fff;
+}

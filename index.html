@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>AngularJS</title>
+
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="./assets/css/turret.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body ng-controller="TodoController">
+
+    <main class="content" role="main">
+      <div class="container">
+        <div class="row">
+          <div class="column-3-5 column-center">
+            <div class="title text-white">
+              {{ title }}
+            </div>
+          </div>
+        </div>
+      </div> <!-- container -->
+
+      <div class="container todos">
+        <div class="row">
+          <div class="column-3-5 column-center">
+            <div class="todos__new panel">
+              <form class="todos__form container" ng-submit="addTodo()">
+                <div class="row">
+                  <input class="column-8-12 column-offset-1-12" type="text" placeholder="Type something here..." ng-model="newTodo" autofocus />
+                  <button type="submit" class="button column-2-12 button__submit">Add</button>
+                </div>
+              </form>
+            </div> <!-- todos__new panel -->
+            <div class="todos__remaining panel">
+              <span class="todos__header text-light-grey">
+                Remaining ({{todos.remaining.length}} <ng-pluralize count="todos.remaining.length" when="{ one: 'item', other: 'items' }"></ng-pluralize>)
+              </span>
+              <ul class="todo__list" ng-show="todos.remaining.length">
+                <li class="todo--remaining text-light-grey" title="Click to finish this task." ng-repeat="remainingTodo in todos.remaining track by $index" ng-click="completeTodo($index)">
+                  <span class="todo__counter">{{ $index+1 }}</span> {{ remainingTodo }}
+                </li>
+              </ul>
+              <span class="todos__remaining--empty" ng-hide="todos.remaining.length">
+                There's no waiting task, add some to list here.
+              </span>
+            </div> <!-- todos__remaining panel -->
+            <div class="todos__completed panel">
+              <span class="todos__header text-light-grey">
+                Completed ({{todos.completed.length}} <ng-pluralize count="todos.completed.length" when="{ one: 'item', other: 'items' }"></ng-pluralize>)
+              </span>
+              <ul class="todo__list" ng-show="todos.completed.length">
+                <li class="todo--completed text-light-grey" title="Click to remove this task." ng-repeat="completedTodo in todos.completed" ng-click="deleteTodo($index)">
+                  <span class="todo__counter">{{ $index+1 }}</span> {{ completedTodo }}
+                </li>
+              </ul>
+              <span class="todos__completed--empty" ng-hide="todos.completed.length">
+                There's no completed task yet.
+              </span>
+            </div> <!-- todos__completed panel -->
+          </div>
+        </div> <!-- row -->
+      </div> <!-- container todos -->
+
+      <div class="container footer">
+        <div class="row">
+          <div class="column-3-5 column-center">
+            <div class="text-white">
+              Built with <span>&hearts;</span> by <a href="www.gokaygurcancom">Gökay Gürcan</a>
+            </div>
+          </div>
+        </div>
+      </div> <!-- container -->
+    </main>
+
+    <!-- javascripts -->
+    <script src="./assets/js/angular.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
